@@ -2,8 +2,8 @@
 
 ## 개발배경
 - 홈페이지 개발을 위한 데모 프로젝트 스타트!  
-- 개발환경 셋팅 참고 (https://deockstory.tistory.com/26)
-- - -
+- 개발환경 셋팅 참고 (https://deockstory.tistory.com/26)  
+
 ## 1주차
 **1. npm은 무엇일까?**  
   "Node Package Manager"는 JavaScript의 런타임 Node.js를 위한 기본 패키지 관리자로써, 자바스크립트 패키지 관리와 CLI(Command-line interface)를 활용한 배포 및 다운로드 패키지 2가지 요소로 이뤄져 있습니다.  
