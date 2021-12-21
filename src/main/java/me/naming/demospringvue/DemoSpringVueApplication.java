@@ -17,7 +17,7 @@ public class DemoSpringVueApplication {
 
     @GetMapping("/hello")
     public String hello(){
-      return "/hello";
+      return "/index";
     }
 
   }

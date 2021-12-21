@@ -1,5 +1,8 @@
 # Spring Boot + Vue.js 데모 프로젝트
 
+## 개발버전
+- Spring Boot 2.5.5 / gradle 7.0 / npm 7.24.0 / node 14.5.0 / @vue cli 4.5.15
+
 ## 개발배경
 - 홈페이지 개발을 위한 데모 프로젝트 스타트!  
 - 개발환경 셋팅 참고 (https://deockstory.tistory.com/26)  
