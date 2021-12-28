@@ -9,7 +9,14 @@
 
 ## 1주차
 **1. npm은 무엇일까?**  
-  "Node Package Manager"는 JavaScript의 런타임 Node.js를 위한 기본 패키지 관리자로써, 자바스크립트 패키지 관리와 CLI(Command-line interface)를 활용한 배포 및 다운로드 패키지 2가지 요소로 이뤄져 있습니다.  
+- "Node Package Manager"는 Node.js를 위한 기본 패키지 관리자로써, Java의 Gradle, PHP의 Composer과 같은 기능을 제공합니다.
+- Webpack, Babel이란?
+    - Webpack은 모듈 번들링을 통해 여러 JS파일들을 하나의 JS파일로 생성하는 것.
+        - 왜 이러한 기능이 필요할까? 페이지 호출 시 여러 js 파일들을 불러오는데, 해당 파일들을 하나로 통합관리함으로써 네트워크 절약이 가능하다.
+    - Babel은 새로운 버전의 JS 코드를 구 버전의 JS 코드로 변환시켜 주는 모듈.
+        - 왜 이러한 기능이 필요할까? 각 브라우저별로 JS를 지원해주는 버전이 제각각이다. 따라서 개발자 입장으로써 최신 버전의 JS 코드를 사용 할 수 있지만, 컴파일 시 구버전으로 변환해줌으로써 확장성있는 서비스 개발이 가능하다.  
+
+참고 (https://medium.com/front-end-weekly/what-are-npm-yarn-babel-and-webpack-and-how-to-properly-use-them-d835a758f987)  
   
 **2. package.json에 있는 파일들은 무엇일까?**  
 해당 파일은 npm 설치 시(npm init) 기본적으로 볼 수 있는 파일인데, 자바스크립트 패키지 범위와 정보를 알려주기 위한 파일입니다. 즉, maven, gradle과 같이 라이브러리나 모듈들을 관리하기위한 파일이라고 볼 수 있습니다. 또한 package-lock.json은 노드 패키지 간의 의존 관계를 고정시켜둔 파일입니다.
