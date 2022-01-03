@@ -2,6 +2,7 @@
 
 ## 개발버전
 - Spring Boot 2.5.5 / gradle 7.0 / npm 7.24.0 / node 14.5.0 / @vue cli 4.5.15
+- docker version 20.10.10 
 
 ## 개발배경
 - 홈페이지 개발을 위한 데모 프로젝트 스타트!  
@@ -37,3 +38,4 @@
  : npm documents(https://docs.npmjs.com/cli/v7/using-npm/scripts)  
  : zerocho package.json(https://www.zerocho.com/category/NodeJS/post/5825a3caaff5c70018279975)  
  : zerocho 노드 프로젝트의 설정 파일들 (https://www.zerocho.com/category/NodeJS/post/5b934c8e6c974e001b710767_)
+ : mysql docker 설정 : http://jmlim.github.io/docker/2019/07/30/docker-mysql-setup/
