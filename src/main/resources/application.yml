@@ -1,7 +1,29 @@
 server:
   port: 9000
 spring:
+  config:
+    activate:
+      on-profile: local
   thymeleaf:
     prefix: classpath:/static/
     cache: false
     mode: LEGACYHTML5
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3300/TEST_DB?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: demoSpringVue
+    password: demoSpringVue1!23
+    jpa:
+      show-sql: true
+      generate-ddl: true
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      open-in-view: false
+      properties:
+        hibernate:
+          format_sql: true
+      hibernate:
+        ddl-auto: create
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+          implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy

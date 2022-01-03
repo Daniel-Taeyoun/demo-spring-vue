@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql-test # 컨테이너 이름 설정
+    ports:
+      - "3300:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)  <- 컨테이너 내부는 무조건 3306
+    environment: # -e 옵션
+      - MYSQL_DATABASE=TEST_DB
+      - MYSQL_ROOT_PASSWORD=test1!23
+      - TZ=Asia/Seoul
+    command: # 명령어 실행
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - /Users/naming/SW_Engineer/dockerMysqlData:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
