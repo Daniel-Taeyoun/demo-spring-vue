@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -23,7 +22,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserMgtRepositoryTest {
 
   @Autowired
-  private TestEntityManager testEntityManager;
+  private UserMgtRepository userMgtRepository;
 
   @Test
   public void insertUserMgt() {
@@ -32,9 +31,9 @@ public class UserMgtRepositoryTest {
         .pwd("dbTest1!23")
         .build();
 
-    testEntityManager.persist(userMgt);
+    userMgtRepository.save(userMgt);
 
-    assertThat(userMgt).isEqualTo(testEntityManager.find(UserMgt.class, userMgt.getUserNo()));
+    assertThat(userMgt).isEqualTo(userMgtRepository.getUserMgtByUserId(userMgt.getUserId()));
   }
 
 }

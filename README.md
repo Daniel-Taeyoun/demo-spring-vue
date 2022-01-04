@@ -1,8 +1,9 @@
 # Spring Boot + Vue.js 데모 프로젝트
 
 ## 개발버전
-- Spring Boot 2.5.5 / gradle 7.0 / npm 7.24.0 / node 14.5.0 / @vue cli 4.5.15
+- Spring Boot 2.5.5 / gradle 7.0 / npm 7.24.0 / node 14.5.0 / @vue cli 4.5.15 / mysql 5.7
 - docker version 20.10.10 
+- mysql docker hub (https://hub.docker.com/r/naming0617/mysql)
 
 ## 개발배경
 - 홈페이지 개발을 위한 데모 프로젝트 스타트!  

@@ -13,5 +13,6 @@ services:
     command: # 명령어 실행
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
+      - --lower_case_table_names=1 # 테이블 이름 대소문자 관련 옵션(1:입력 값이 대·소문자든 소문자로 인식 소문자 인식 파일 생성
     volumes:
       - /Users/naming/SW_Engineer/dockerMysqlData:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
