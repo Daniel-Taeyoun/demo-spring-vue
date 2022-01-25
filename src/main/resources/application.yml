@@ -1,6 +1,6 @@
 spring:
   thymeleaf:
-    prefix: classpath:/static/
+    prefix: classpath:static/
     cache: false
     mode: LEGACYHTML5
   datasource:

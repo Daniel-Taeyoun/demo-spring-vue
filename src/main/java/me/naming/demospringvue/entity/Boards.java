@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,32 +14,23 @@ import lombok.Setter;
 /**
  * @author : naming
  * @packageName : me.naming.demospringvue.entity
- * @date : 2022/01/03
+ * @date : 2022/01/26
  * @description :
  */
 @Entity
-@Table(name = "USER_MGT")
+@Table(name = "BOARDS")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserMgt {
+public class Boards {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "USER_NO")
-  private Long userNo;
+  @Column(name = "BOARD_NO")
+  private Long boardNo;
 
-  @Column(name = "USER_ID", nullable = false)
-  private String userId;
-
-  @Column(name = "PWD", nullable = false)
-  private String pwd;
-
-  @Builder
-  public UserMgt(String userId, String pwd) {
-    this.userId = userId;
-    this.pwd = pwd;
-  }
+  @Column(name = "BOARD_TITLE", nullable = false)
+  private String boardTitle;
 
 }

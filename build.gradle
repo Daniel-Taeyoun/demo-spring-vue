@@ -10,6 +10,7 @@ node {
     npmVersion = '7.24.0'
     workDir = file("./src/frontend")
     npmWorkDir = file("./src/frontend")
+    nodeModulesDir = file("./src/frontend")
 }
 
 group = 'me.naming'
