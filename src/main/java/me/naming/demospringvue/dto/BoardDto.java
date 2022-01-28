@@ -11,8 +11,8 @@ import lombok.Data;
 @Data
 public class BoardDto {
 
-  private Long boardNo;
+  private final Long boardNo;
 
-  private String boardTitle;
+  private final String boardTitle;
 
 }
