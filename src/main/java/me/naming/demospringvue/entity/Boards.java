@@ -33,4 +33,8 @@ public class Boards {
   @Column(name = "BOARD_TITLE", nullable = false)
   private String boardTitle;
 
+  public Boards(String boardTitle) {
+    this.boardTitle = boardTitle;
+  }
+
 }

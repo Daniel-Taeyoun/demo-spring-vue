@@ -38,6 +38,7 @@ const router = new VueRouter({
 });
 
 Vue.prototype.$Chartist = Chartist;
+Vue.config.devtools = true;
 
 Vue.use(VueRouter);
 Vue.use(MaterialDashboard);

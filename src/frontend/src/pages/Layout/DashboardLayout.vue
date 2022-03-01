@@ -49,8 +49,8 @@ export default {
     TopNavbar,
     DashboardContent,
     ContentFooter,
-    MobileMenu,
-    FixedPlugin,
+    MobileMenu
+    // FixedPlugin
   },
   data() {
     return {

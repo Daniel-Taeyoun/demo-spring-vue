@@ -56,26 +56,26 @@
                   dropdown
                 "
               >
-                <div class="md-list-item-content">
-                  <drop-down>
-                    <md-button
-                      slot="title"
-                      class="md-button md-just-icon md-simple"
-                      data-toggle="dropdown"
-                    >
-                      <md-icon>notifications</md-icon>
-                      <span class="notification">5</span>
-                      <p class="hidden-lg hidden-md">Notifications</p>
-                    </md-button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Mike John responded to your email</a></li>
-                      <li><a href="#">You have 5 new tasks</a></li>
-                      <li><a href="#">You're now friend with Andrew</a></li>
-                      <li><a href="#">Another Notification</a></li>
-                      <li><a href="#">Another One</a></li>
-                    </ul>
-                  </drop-down>
-                </div>
+<!--                <div class="md-list-item-content">-->
+<!--                  <drop-down>-->
+<!--                    <md-button-->
+<!--                      slot="title"-->
+<!--                      class="md-button md-just-icon md-simple"-->
+<!--                      data-toggle="dropdown"-->
+<!--                    >-->
+<!--                      <md-icon>notifications</md-icon>-->
+<!--                      <span class="notification">5</span>-->
+<!--                      <p class="hidden-lg hidden-md">Notifications</p>-->
+<!--                    </md-button>-->
+<!--                    <ul class="dropdown-menu dropdown-menu-right">-->
+<!--                      <li><a href="#">Mike John responded to your email</a></li>-->
+<!--                      <li><a href="#">You have 5 new tasks</a></li>-->
+<!--                      <li><a href="#">You're now friend with Andrew</a></li>-->
+<!--                      <li><a href="#">Another Notification</a></li>-->
+<!--                      <li><a href="#">Another One</a></li>-->
+<!--                    </ul>-->
+<!--                  </drop-down>-->
+<!--                </div>-->
               </a>
             </li>
 
