@@ -28,10 +28,7 @@ public class BoardController {
 
   @GetMapping("/boards")
   @ResponseBody
-  public Map<String, Object> getBoards(@RequestParam(value = "page", defaultValue = "1") String strPage, @RequestParam(value = "count", defaultValue = "10") String strCount) {
-
-    int page = Integer.parseInt(strPage);
-    int count = Integer.parseInt(strCount);
+  public Map<String, Object> getBoards(@RequestParam(value = "start") int page, @RequestParam(value = "length") int rows) {
 
     List<BoardDto> testList = Arrays.asList(new BoardDto(1L, "게시판1")
         , new BoardDto(2L, "게시판2")
@@ -51,8 +48,10 @@ public class BoardController {
     );
 
     List<BoardDto> outputList = new ArrayList<>();
-    for(int i = page - 1; i<count; i++) {
-      outputList.add(testList.get(i));
+    for(int i = (page - 1)  * 10; i < page * rows; i++) {
+      if(testList.size() > i) {
+        outputList.add(testList.get(i));
+      }
     }
 
     Map<String, Object> objectMap = new HashMap<>();
