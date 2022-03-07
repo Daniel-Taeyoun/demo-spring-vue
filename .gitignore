@@ -38,3 +38,7 @@ out/
 
 ### Vue.js Build File ###
 **/src/main/resources/static/**
+**/src/frontend/dist/**
+**/src/frontend/node_modules/**
+**/src/frontend/npm-v7.24.0/**
+**/src/frontend/docs/**
