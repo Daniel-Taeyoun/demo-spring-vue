@@ -7,19 +7,36 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import request from "request"
+import axios from 'axios'
+
 
 export default {
   name: 'app',
   components: {
     HelloWorld
   },
-  mounted() {
-    request('http://localhost:8080/api/hello', function (error, response, body) {
-      console.log('error : '+error);
-      console.log('response : '+response);
-      console.log('body :'+body);
-    });
+  methods: {
+    getBoardList(page){
+      axios.get("/boards", {
+        params : {
+          start: page,
+          length: 10
+        }
+      }).then(response => {
+        this.list = response.data.list;
+        this.totalCount = response.data.count;
+        console.log(this.list);
+        console.log(this.totalCount);
+        console.log('ReTest')
+      })
+      .catch(error => {
+        console.log('***** Error Log : ', error);
+      });
+    }
+  },
+  created() {
+    console.log('*** App.Vue 동작');
+    this.getBoardList(1);
   }
 }
 </script>
