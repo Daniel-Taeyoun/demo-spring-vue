@@ -1,42 +1,22 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <BoardList/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import axios from 'axios'
+// import HelloWorld from './components/HelloWorld.vue'
+import BoardList from './components/BoardList.vue'
+// import axios from 'axios'
 
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  },
-  methods: {
-    getBoardList(page){
-      axios.get("/boards", {
-        params : {
-          start: page,
-          length: 10
-        }
-      }).then(response => {
-        this.list = response.data.list;
-        this.totalCount = response.data.count;
-        console.log(this.list);
-        console.log(this.totalCount);
-        console.log('ReTest')
-      })
-      .catch(error => {
-        console.log('***** Error Log : ', error);
-      });
-    }
-  },
-  created() {
-    console.log('*** App.Vue 동작');
-    this.getBoardList(1);
+    // HelloWorld
+    BoardList
   }
 }
 </script>
