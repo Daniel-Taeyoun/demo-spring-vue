@@ -1,27 +1,62 @@
 <template>
   <div>
-    <b-table striped hover :items="boards"></b-table>
+    <b-table
+        striped hover
+        id="pagination-table"
+        :per-page="perPage"
+        :current-page="currentPage"
+        :items="boards"
+        :fields="fields" ></b-table>
+    <b-pagination
+        v-model="currentPage"
+        :total-rows="rows"
+        :per-page="perPage"
+        align="center"
+        aria-controls="pagination-table"></b-pagination>
   </div>
-<!--  <div>-->
-<!--    <b-table striped hover v-for="(boardNo, boardTitle) in boards" :fields="fields"></b-table>-->
-<!--  </div>-->
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import data from "@/data";
 
 export default {
   name: 'BoardList',
   data: () => {
+    let boards = data.Content.sort((a, b) => {
+      return b.content_id - a.content_id;
+    });
+    boards = boards.map(contentItem => {
+      return {
+        ...contentItem,
+        user_name: data.User.filter(
+            userItem => userItem.user_id === contentItem.user_id
+        )[0].name
+      };
+    });
     return {
-      fields: ['No', '제목'],
-      boards: [],
-      items: [
-        { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-        { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-        { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-        { age: 38, first_name: 'Jami', last_name: 'Carney' }
-      ]
+      currentPage: 1,
+      perPage: 10,
+      totalCount: 0,
+      fields: [
+        {
+          key: "content_id",
+          label: "글번호"
+        },
+        {
+          key: "title",
+          label: "제목"
+        },
+        {
+          key: "created_at",
+          label: "등록일"
+        },
+        {
+          key: "user_name",
+          label: "글쓴이"
+        }
+      ],
+      boards: boards
     }
   },
   methods: {
@@ -33,19 +68,20 @@ export default {
         }
       }).then(response => {
         this.boards = response.data.list;
-        // this.totalCount = response.data.count;
-        console.log(this.items[0]);
-        console.log(this.boards[0]);
-        console.log(this.boards[0].boardTitle);
-        console.log(this.boards[0].getBoardTitle);
+        this.totalCount = response.data.count;
       })
       .catch(error => {
         console.log('***** Error Log : ', error);
       });
     }
   },
-  created() {
-    this.getBoardList(1);
+  computed: {
+    rows() {
+      return this.boards.length;
+    }
   }
+  // created() {
+  //   this.getBoardList(this.currentPage);
+  // }
 }
 </script>

@@ -23,7 +23,7 @@ public class HelloController {
   @GetMapping("/boards")
   @ResponseBody
   public Map<String, Object> getBoards(@RequestParam(value = "start") int page, @RequestParam(value = "length") int rows) {
-
+    System.out.println("*** boards 동작");
     List<BoardDto> testList = Arrays.asList(new BoardDto(1L, "게시판1")
         , new BoardDto(2L, "게시판2")
         , new BoardDto(3L, "게시판3")
